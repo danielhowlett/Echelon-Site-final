@@ -1,36 +1,53 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    quote:
-      "I came in barely able to turn my neck and left feeling like myself again. The care here is thorough and unhurried — I never felt rushed through an appointment.",
-    detail: "Neck & Mobility",
+    name: "Macy",
+    label: "Family & Pregnancy Care",
+    preview:
+      "Dr. Nathan has been incredible! He takes the time to explain what's going on in a way that's easy to understand and focuses on helping you move and feel better long term, not just get a quick adjustment.",
+    fullQuote:
+      "Dr. Nathan has been incredible! He takes the time to explain what's going on in a way that's easy to understand and focuses on helping you move and feel better long term, not just get a quick adjustment. I'd highly recommend to both active individuals, and anyone dealing with everyday aches and pains.",
   },
   {
-    name: "James R.",
-    quote:
-      "Years of desk work had caught up with me. Echelon was the first place that addressed the root of the problem rather than just the symptoms. I'm sleeping through the night again.",
-    detail: "Back Pain Relief",
+    name: "Abby",
+    label: "Mobility & Wellness",
+    preview:
+      "I leave with less tension in my body and feeling more relaxed. I went to get adjusted multiple times during all three trimesters of my pregnancy and hardly dealt with any lower back pain at all.",
+    fullQuote:
+      "I've been adjusted by Nathan Smith many times and each time I leave with less tension in my body and feeling more relaxed all together. I went to get adjusted multiple times during all three trimesters of my pregnancy and hardly dealt with any lower back pain at all. I have always felt safe and comfortable when getting adjusted and would 10/10 recommend echelon chiropractic.",
   },
   {
-    name: "Amanda K.",
-    quote:
-      "I was skeptical at first, but a friend insisted I give it a try. The office is calm, the staff is warm, and the results have been remarkable. I'm so glad I came in.",
-    detail: "First-Time Patient",
+    name: "Callie",
+    label: "Pregnancy Care",
+    preview:
+      "Dr. Smith does an excellent job adjusting me. He takes the time to talk through my issues and gives me good exercises and advice to help strengthen my problem areas.",
+    fullQuote:
+      "When my local chiropractor of many years retired I was worried that I wouldn't find another one like him. I'm so glad that wasn't the case! Dr. Smith does an excellent job adjusting me. He takes the time to talk through my issues and gives me good exercises and advice to help strengthen my problem areas. I would highly recommend Dr. Smith!",
   },
   {
-    name: "Tom & Lisa B.",
-    quote:
-      "Our whole family sees Dr. Smith now. He tailors the approach to each of us completely differently, which says a lot about how much he actually listens.",
-    detail: "Family Care",
+    name: "Lori",
+    label: "Ongoing Care",
+    preview:
+      "I've had a lot of issues with my neck and he has taken intentional care to make sure I get relief when needed. Something else I really appreciate is his ability to sit with you and actually listen to your concerns.",
+    fullQuote:
+      "I have gone to multiple chiropractors in the Dickson area and none of them compare to Dr. Smith at Echelon chiropractic. I've had a lot of issues with my neck and he has taken intentional care to make sure I get relief when needed. I also got adjusted throughout my entire pregnancy as well and I know it's the reason I feel as good as I do. He is very intentional with trying to get ahead of an issue or immediately tackling one that comes up. Something else I really appreciate is his ability to sit with you and actually listen to your concerns- time with him is never rushed. I highly recommend Dr. Smith!",
   },
   {
-    name: "Derek W.",
-    quote:
-      "I was dealing with hip pain during training and wasn't sure I'd make it to race day. Echelon got me back on track and I finished feeling strong. Couldn't recommend it more.",
-    detail: "Active Recovery",
+    name: "Gracie",
+    label: "Neck Pain & Pregnancy Care",
+    preview:
+      "I've had a lot of issues with my neck and he has taken intentional care to make sure I get relief when needed. I also got adjusted throughout my entire pregnancy as well and I know it's the reason I feel as good as I do.",
+    fullQuote:
+      "I have gone to multiple chiropractors in the Dickson area and none of them compare to Dr. Smith at Echelon chiropractic. I've had a lot of issues with my neck and he has taken intentional care to make sure I get relief when needed. I also got adjusted throughout my entire pregnancy as well and I know it's the reason I feel as good as I do. He is very intentional with trying to get ahead of an issue or immediately tackling one that comes up. Something else I really appreciate is his ability to sit with you and actually listen to your concerns- time with him is never rushed. I highly recommend Dr. Smith!",
   },
 ];
 
@@ -54,11 +71,11 @@ function StarRow() {
 }
 
 export function TestimonialsSection() {
-  const [active, setActive] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const prev = () =>
-    setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
-  const next = () => setActive((a) => (a + 1) % testimonials.length);
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <section className="bg-[#fffbe9] py-14 md:py-18 lg:py-20 overflow-hidden border-b border-[#183e2c]/10">
@@ -76,119 +93,55 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Desktop/tablet grid */}
-        <div className="hidden lg:grid gap-6 lg:gap-7 xl:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-12">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={[
-                "bg-white rounded-2xl p-7 flex flex-col gap-3 shadow-sm border border-[#183e2c]/6 w-full",
-                // 5 cards: keep the last row balanced at xl by making the final two span half width each.
-                i >= 3 ? "xl:col-span-6" : "xl:col-span-4",
-                // On md (2 cols), avoid an orphaned final card by letting it span full width.
-                i === testimonials.length - 1 ? "md:col-span-2 xl:col-span-6" : "",
-              ].join(" ")}
-            >
-              <StarRow />
-              <p className="font-sans text-[#183e2c]/75 text-sm leading-relaxed flex-1">
-                "{t.quote}"
-              </p>
-              <div className="pt-3 border-t border-[#183e2c]/10">
-                <p className="font-serif text-[#183e2c] font-medium text-sm">{t.name}</p>
-                <p className="font-sans text-[11px] text-[#183e2c]/45 tracking-wide mt-0.5">{t.detail}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile + tablet carousel */}
-        <div className="lg:hidden">
-          <div className="relative overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, x: 32 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -32 }}
-                transition={{ duration: 0.28 }}
-                className="bg-white rounded-2xl px-6 py-6 shadow-sm border border-[#183e2c]/6"
-              >
-                <StarRow />
-                <p className="font-sans text-[#183e2c]/75 text-sm leading-relaxed mt-3">
-                  "{testimonials[active].quote}"
-                </p>
-                <div className="pt-4 mt-4 border-t border-[#183e2c]/10">
-                  <p className="font-serif text-[#183e2c] font-medium text-sm">
-                    {testimonials[active].name}
-                  </p>
-                  <p className="font-sans text-[11px] text-[#183e2c]/45 tracking-wide mt-0.5">
-                    {testimonials[active].detail}
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Controls */}
-          <div className="flex items-center justify-between mt-5">
-            <button
-              onClick={prev}
-              aria-label="Previous testimonial"
-              className="w-9 h-9 rounded-full border border-[#183e2c]/20 bg-white flex items-center justify-center text-[#183e2c] hover:bg-[#183e2c]/5 transition-colors"
-            >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M10 12L6 8L10 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            {/* Dots */}
-            <div className="flex items-center gap-1.5">
-              {testimonials.map((_, i) => (
-                <button
+        {/* Carousel - 1 card mobile, 2 cards tablet, 3 cards desktop */}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((t, i) => (
+                <CarouselItem
                   key={i}
-                  onClick={() => setActive(i)}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === active
-                      ? "w-5 h-1.5 bg-[#183e2c]"
-                      : "w-1.5 h-1.5 bg-[#183e2c]/20"
-                  }`}
-                />
+                  className="md:basis-1/2 lg:basis-1/3 pl-4"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="bg-white rounded-2xl p-7 flex flex-col gap-3 shadow-sm border border-[#183e2c]/6 w-full h-full"
+                  >
+                    <StarRow />
+                    <p className="font-sans text-[#183e2c]/75 text-sm leading-relaxed flex-1">
+                      {expandedIndex === i ? `"${t.fullQuote}"` : `"${t.preview}"`}
+                    </p>
+                    <div className="pt-3 border-t border-[#183e2c]/10">
+                      <p className="font-serif text-[#183e2c] font-medium text-sm">{t.name}</p>
+                      <p className="font-sans text-[11px] text-[#183e2c]/45 tracking-wide mt-0.5">{t.label}</p>
+                    </div>
+                    <button
+                      onClick={() => toggleExpand(i)}
+                      className="mt-3 font-sans text-[#183e2c] text-sm font-medium hover:text-[#2d5a45] transition-colors duration-200 underline underline-offset-4 text-left"
+                    >
+                      {expandedIndex === i ? "Close Story" : "Read Full Story"}
+                    </button>
+                  </motion.div>
+                </CarouselItem>
               ))}
-            </div>
-
-            <button
-              onClick={next}
-              aria-label="Next testimonial"
-              className="w-9 h-9 rounded-full border border-[#183e2c]/20 bg-white flex items-center justify-center text-[#183e2c] hover:bg-[#183e2c]/5 transition-colors"
-            >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M6 4L10 8L6 12"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* Disclaimer */}
-          <p className="text-center font-sans text-[11px] text-[#183e2c]/40 mt-5 leading-relaxed px-2">
-            Individual results may vary. Testimonials are shared for general informational purposes.
-          </p>
+            </CarouselContent>
+            <CarouselPrevious className="hidden lg:flex -left-16 top-1/2 -translate-y-1/2 w-10 h-10 border-[#183e2c]/20 bg-white text-[#183e2c] hover:bg-[#183e2c]/5" />
+            <CarouselNext className="hidden lg:flex -right-16 top-1/2 -translate-y-1/2 w-10 h-10 border-[#183e2c]/20 bg-white text-[#183e2c] hover:bg-[#183e2c]/5" />
+          </Carousel>
         </div>
+
+        {/* Disclaimer */}
+        <p className="text-center font-sans text-[11px] text-[#183e2c]/40 mt-8 md:mt-10 leading-relaxed px-2">
+          Individual results may vary. Testimonials are shared for general informational purposes.
+        </p>
       </div>
     </section>
   );

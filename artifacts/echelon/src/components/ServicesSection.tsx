@@ -29,7 +29,7 @@ const services = [
   {
     icon: "airline_seat_recline_extra",
     title: "Flexion & Distraction",
-    description: "A gentle, non-surgical treatment for disc injuries and lower back pain."
+    description: "A gentle chiropractic table technique that rhythmically stretches and decompresses the spine to reduce disc and nerve pressure, relieve pain, and improve mobility."
   }
 ];
 
@@ -53,10 +53,10 @@ export function ServicesSection() {
       <div className="container mx-auto">
         <div className="max-w-3xl mb-10 md:mb-16">
           <h2 className="font-serif text-[#183e2c] mb-5" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
-            Chiropractic Services in Dickson, Tennessee
+            Services Offered at Echelon Chiropractic
           </h2>
           <p className="font-sans text-[#414843] text-base md:text-lg leading-relaxed">
-            We offer comprehensive chiropractic care in Dickson, TN tailored to your needs—focused on mobility, long-term wellness, and practical pain relief.
+            Comprehensive chiropractic care, tailored to your needs—focused on mobility, long-term wellness, and practical pain relief.
           </p>
         </div>
 
