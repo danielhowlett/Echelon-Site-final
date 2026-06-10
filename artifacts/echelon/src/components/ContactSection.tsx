@@ -319,9 +319,17 @@ export function ContactSection() {
                 </div>
                 <div className="flex gap-3.5 items-start">
                   <span className="material-symbols-outlined text-[#fffbe9]/70 text-xl shrink-0 mt-0.5">schedule</span>
-                  <div>
-                    <p className="font-sans text-white font-medium">Monday – Friday</p>
-                    <p className="font-sans text-white/60 text-sm">By Appointment</p>
+                  <div className="space-y-1">
+                    <p className="font-sans text-white font-medium">Monday</p>
+                    <p className="font-sans text-white/60 text-sm">7:00 AM – 5:00 PM</p>
+                    <p className="font-sans text-white font-medium">Tuesday</p>
+                    <p className="font-sans text-white/60 text-sm">7:00 AM – 5:00 PM</p>
+                    <p className="font-sans text-white font-medium">Wednesday</p>
+                    <p className="font-sans text-white/60 text-sm">Closed</p>
+                    <p className="font-sans text-white font-medium">Thursday</p>
+                    <p className="font-sans text-white/60 text-sm">9:00 AM – 6:00 PM</p>
+                    <p className="font-sans text-white font-medium">Friday</p>
+                    <p className="font-sans text-white/60 text-sm">7:00 AM – 3:00 PM</p>
                   </div>
                 </div>
               </div>
