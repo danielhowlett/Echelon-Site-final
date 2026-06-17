@@ -27,7 +27,7 @@ export function ContactSection() {
             </h2>
 
             <p className="font-sans text-[#414843] text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-              Scheduling is handled through our secure Jane booking page. You can choose a treatment, view available times, and book your visit online.
+              Choose your visit type, view available appointment times, and schedule your visit online.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -41,7 +41,7 @@ export function ContactSection() {
               </a>
               <p className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#183e2c]/70">
                 <img src={logoImage} alt="Echelon logo" className="h-5 w-5 rounded-full bg-white p-1" />
-                Opens Jane in a new tab
+                Opens in a new tab
               </p>
             </div>
 
@@ -51,27 +51,27 @@ export function ContactSection() {
                 <li className="flex gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#183e2c] text-[11px] font-bold text-white">1</span>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Choose a time through Jane</p>
-                    <p className="font-sans text-sm text-[#414843]/80">Browse available appointments and select what works best for you.</p>
+                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Choose your visit type</p>
+                    <p className="font-sans text-sm text-[#414843]/80">Select the appointment option that best fits your needs.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#183e2c] text-[11px] font-bold text-white">2</span>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Pick an available time</p>
-                    <p className="font-sans text-sm text-[#414843]/80">View openings through Jane and choose the appointment time that works for you.</p>
+                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Pick a time</p>
+                    <p className="font-sans text-sm text-[#414843]/80">View available openings and choose what works for your schedule.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#183e2c] text-[11px] font-bold text-white">3</span>
                   <div>
                     <p className="font-sans text-sm font-semibold text-[#183e2c]">Complete your booking</p>
-                    <p className="font-sans text-sm text-[#414843]/80">Enter your details and finish scheduling securely through Jane.</p>
+                    <p className="font-sans text-sm text-[#414843]/80">Enter your details and finish scheduling securely online.</p>
                   </div>
                 </li>
               </ol>
               <p className="mt-4 font-sans text-sm text-[#414843]/80">
-                If you are unsure which treatment to choose, call the office and we’ll be happy to help.
+                Not sure which visit type to choose? Call the office and we’ll be happy to help.
               </p>
             </div>
           </motion.div>
