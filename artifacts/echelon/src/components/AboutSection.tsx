@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import drPhoto from "@assets/IMG_3427_1779219763966.jpeg";
+import drPhoto from "@assets/68f85b87-9c6f-42af-87e3-d7a8a592c31e.png";
 
 export function AboutSection() {
   const [isExpanded, setIsExpanded] = useState(false);

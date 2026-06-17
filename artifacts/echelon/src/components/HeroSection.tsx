@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@assets/david-trinks-U276SVdo4ik-unsplash_1779218066419.jpg";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 export function HeroSection() {
   return (
@@ -25,11 +26,13 @@ export function HeroSection() {
             Helping patients improve mobility, manage pain, and feel better through practical, personalized chiropractic care.
           </p>
           <a
-            href="#appointment"
+            href={JANE_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block text-center bg-white text-[#183e2c] font-bold uppercase tracking-widest text-xs px-8 py-3.5 rounded-sm hover:bg-gray-100 transition-colors"
             style={{ maxWidth: "360px", width: "100%" }}
           >
-            Book Your Consultation
+            Book Online
           </a>
         </motion.div>
       </div>

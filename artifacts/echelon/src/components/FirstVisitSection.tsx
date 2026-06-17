@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 const steps = [
   {
@@ -47,10 +48,12 @@ export function FirstVisitSection() {
               Your first visit is designed to help us understand your needs, answer your questions, and create a care plan that makes sense for you.
             </p>
             <a
-              href="#appointment"
+              href={JANE_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block font-sans text-xs font-semibold tracking-[0.18em] uppercase text-white bg-[#183e2c] px-7 py-3.5 rounded-sm hover:bg-[#1f4f38] transition-colors"
             >
-              Request Appointment
+              Book Online
             </a>
           </motion.div>
 

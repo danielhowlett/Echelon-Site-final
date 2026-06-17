@@ -1,4 +1,5 @@
 import logoImage from "@assets/logo_trimmed.png";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 export function Footer() {
   return (
@@ -40,7 +41,7 @@ export function Footer() {
             <nav className="flex flex-col gap-2 font-sans text-sm text-white/75">
               <a href="#services" className="hover:text-white transition-colors w-fit">Services</a>
               <a href="#about" className="hover:text-white transition-colors w-fit">About</a>
-              <a href="#appointment" className="hover:text-white transition-colors w-fit">Book Appointment</a>
+              <a href={JANE_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors w-fit">Book Online</a>
               <a href="#location" className="hover:text-white transition-colors w-fit">Location</a>
             </nav>
           </div>

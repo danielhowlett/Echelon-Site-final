@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 const faqs = [
   {
@@ -105,10 +106,12 @@ export function FaqSection() {
             Ready to take the next step? Send us a request below and we'll follow up soon.
           </p>
           <a
-            href="#appointment"
+            href={JANE_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex mt-5 items-center justify-center bg-[#183e2c] text-white uppercase tracking-widest text-[11px] font-bold px-6 py-3 rounded-xl hover:bg-[#0e2a1e] transition-colors"
           >
-            Request an Appointment
+            Book Online
           </a>
         </div>
 

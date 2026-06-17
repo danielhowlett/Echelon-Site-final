@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImage from "@assets/logo_trimmed.png";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 export function TopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,10 +66,12 @@ export function TopNav() {
               615-857-9089
             </a>
             <a
-              href="#appointment"
+              href={JANE_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#183e2c] text-white uppercase tracking-widest text-xs font-bold px-5 py-3 rounded-sm hover:bg-[#002818] transition-colors whitespace-nowrap"
             >
-              Request an Appointment
+              Book Online
             </a>
           </div>
 
@@ -108,11 +111,13 @@ export function TopNav() {
               ))}
             </nav>
             <a
-              href="#appointment"
+              href={JANE_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#183e2c] text-white uppercase tracking-widest text-xs font-bold px-8 py-4 rounded-sm text-center hover:bg-[#002818] transition-colors"
               onClick={closeMobile}
             >
-              Request an Appointment
+              Book Online
             </a>
           </motion.div>
         )}

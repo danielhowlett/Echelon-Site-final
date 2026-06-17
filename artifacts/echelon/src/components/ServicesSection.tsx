@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { JANE_BOOKING_URL } from "@/config/booking";
 
 const services = [
   {
@@ -88,10 +89,12 @@ export function ServicesSection() {
 
         <div className="flex justify-center">
           <a
-            href="#appointment"
+            href={JANE_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto text-center bg-[#183e2c] text-white font-bold uppercase tracking-widest text-xs px-10 py-4 rounded-sm hover:bg-[#002818] transition-colors"
           >
-            Schedule Your Visit
+            Book Online
           </a>
         </div>
       </div>
