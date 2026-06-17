@@ -103,7 +103,7 @@ export function FaqSection() {
         {/* Lead-in to contact section */}
         <div className="text-center mt-8 md:mt-9">
           <p className="font-serif text-lg md:text-xl text-[#183e2c]/60 italic max-w-3xl mx-auto">
-            Ready to take the next step? Send us a request below and we'll follow up soon.
+            Ready to take the next step? Book your visit online through Jane.
           </p>
           <a
             href={JANE_BOOKING_URL}

@@ -27,7 +27,7 @@ export function ContactSection() {
             </h2>
 
             <p className="font-sans text-[#414843] text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-              Scheduling is now handled through our secure Jane booking page. You can view availability, choose a time, and request your appointment directly through Jane.
+              Scheduling is handled through our secure Jane booking page. You can choose a treatment, view available times, and book your visit online.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -58,18 +58,21 @@ export function ContactSection() {
                 <li className="flex gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#183e2c] text-[11px] font-bold text-white">2</span>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Complete your request</p>
-                    <p className="font-sans text-sm text-[#414843]/80">Fill out the booking details and submit your appointment request.</p>
+                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Pick an available time</p>
+                    <p className="font-sans text-sm text-[#414843]/80">View openings through Jane and choose the appointment time that works for you.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#183e2c] text-[11px] font-bold text-white">3</span>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-[#183e2c]">The office confirms your visit</p>
-                    <p className="font-sans text-sm text-[#414843]/80">Echelon will follow up to confirm your appointment and next steps.</p>
+                    <p className="font-sans text-sm font-semibold text-[#183e2c]">Complete your booking</p>
+                    <p className="font-sans text-sm text-[#414843]/80">Enter your details and finish scheduling securely through Jane.</p>
                   </div>
                 </li>
               </ol>
+              <p className="mt-4 font-sans text-sm text-[#414843]/80">
+                If you are unsure which treatment to choose, call the office and we’ll be happy to help.
+              </p>
             </div>
           </motion.div>
 
